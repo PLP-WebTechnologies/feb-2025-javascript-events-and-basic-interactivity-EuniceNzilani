@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CinemaSync - Personalized Movie Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>CinemaSync</h1>
+            <p>Your Personalized Movie Companion</p>
+        </header>
+
+        <main>
+            <section id="preference-wizard" class="wizard-section">
+                <div class="wizard-step" id="name-step">
+                    <h2>Let's Get Personal</h2>
+                    <input type="text" id="user-name" placeholder="Your Name" required>
+                    <button class="next-step">Next</button>
+                </div>
+
+                <div class="wizard-step hidden" id="genre-step">
+                    <h2>Choose Your Preferred Genres</h2>
+                    <div class="genre-grid">
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="action">
+                            <span>Action</span>
+                        </label>
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="scifi">
+                            <span>Sci-Fi</span>
+                        </label>
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="drama">
+                            <span>Drama</span>
+                        </label>
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="comedy">
+                            <span>Comedy</span>
+                        </label>
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="thriller">
+                            <span>Thriller</span>
+                        </label>
+                        <label class="genre-card">
+                            <input type="checkbox" name="genre" value="horror">
+                            <span>Horror</span>
+                        </label>
+                    </div>
+                    <button class="next-step">Next</button>
+                </div>
+
+                <div class="wizard-step hidden" id="mood-step">
+                    <h2>What's Your Current Mood?</h2>
+                    <div class="mood-slider-container">
+                        <div class="mood-spectrum">
+                            <span>Calm</span>
+                            <input type="range" id="mood-slider" min="0" max="100" value="50">
+                            <span>Intense</span>
+                        </div>
+                        <div class="emotional-indicators">
+                            <div class="indicator calm">😌</div>
+                            <div class="indicator neutral">😐</div>
+                            <div class="indicator intense">🔥</div>
+                        </div>
+                    </div>
+                    <button class="next-step">Generate Recommendations</button>
+                </div>
+
+                <div class="wizard-step hidden" id="results-step">
+                    <h2>Your Curated Recommendations</h2>
+                    <div id="recommendations-container"></div>
+                    <button id="restart-btn">Start Over</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="loading-overlay" class="hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
